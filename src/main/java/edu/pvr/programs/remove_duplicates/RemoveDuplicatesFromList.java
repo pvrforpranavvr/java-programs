@@ -1,4 +1,4 @@
-package edu.pvr.programs;
+package edu.pvr.programs.remove_duplicates;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -6,34 +6,34 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class RemoveDuplicatesFromList {
+public class RemoveDuplicatesFromList<E> {
 
-    public List<String> removeDuplicatesUsingStreamsDistinct(List<String> values) {
+    public List<E> removeDuplicatesUsingStreamsDistinct(List<E> values) {
         return values.stream()
                 .distinct()
                 .collect(Collectors.toList());
 
     }
 
-    public List<String> removeDuplicatesUsingStreamsFilter(List<String> values) {
-        Set<String> unique = new HashSet<>();
+    public List<E> removeDuplicatesUsingStreamsFilter(List<E> values) {
+        Set<E> unique = new HashSet<>();
         return values.stream()
                 .filter(unique::add)
                 .collect(Collectors.toList());
 
     }
 
-    public List<String> removeDuplicatesUsingSet(List<String> values) {
-        Set<String> unique = new HashSet<>(values);
+    public List<E> removeDuplicatesUsingSet(List<E> values) {
+        Set<E> unique = new HashSet<>(values);
         return new ArrayList<>(unique);
     }
 
-    public List<String> removeDuplicatesUsingPrimitiveFor(List<String> values) {
+    public List<E> removeDuplicatesUsingPrimitiveFor(List<E> values) {
 
-        List<String> deduplicatedList = new ArrayList<>();
-        for (String value : values) {
+        List<E> deduplicatedList = new ArrayList<>();
+        for (E value : values) {
             boolean found = false;
-            for (String s : deduplicatedList) {
+            for (E s : deduplicatedList) {
                 if (value.equals(s)) {
                     found = true;
                     break;
@@ -46,11 +46,11 @@ public class RemoveDuplicatesFromList {
         return deduplicatedList;
     }
 
-    public List<String> removeDuplicatesUsingSetAndFor(List<String> values) {
-        Set<String> uniqueSet = new HashSet<>();
-        List<String> deduplicatedList = new ArrayList<>();
+    public List<E> removeDuplicatesUsingSetAndFor(List<E> values) {
+        Set<E> uniqueSet = new HashSet<>();
+        List<E> deduplicatedList = new ArrayList<>();
 
-        for (String value : values) {
+        for (E value : values) {
             if (uniqueSet.add(value)) {
                 deduplicatedList.add(value);
             }

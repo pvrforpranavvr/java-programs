@@ -1,4 +1,4 @@
-package edu.pvr.programs;
+package edu.pvr.programs.remove_duplicates;
 
 import java.util.ArrayList;
 import java.util.HashSet;

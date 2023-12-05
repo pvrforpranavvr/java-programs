@@ -1,5 +1,6 @@
 package edu.pvr.programs;
 
+import edu.pvr.programs.remove_duplicates.RemoveDuplicatesFromListCaseInSensitive;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
