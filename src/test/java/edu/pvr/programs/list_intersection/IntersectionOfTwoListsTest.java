@@ -21,9 +21,23 @@ class IntersectionOfTwoListsTest {
     }
 
     @Test
+    public void testIntersectionPrimitiveFor() {
+
+        List<String> intersection = intersectionOfTwoLists.intersectionPrimitiveFor(leftItems, rightItems);
+        assertEquals(expectedIntersection, intersection);
+    }
+
+    @Test
+    public void testIntersectionUsingContains() {
+
+        List<String> intersection = intersectionOfTwoLists.intersectionUsingContains(leftItems, rightItems);
+        assertEquals(expectedIntersection, intersection);
+    }
+
+    @Test
     public void testIntersectionUsingPrimitive() {
 
-        List<String> intersection = intersectionOfTwoLists.intersectionUsingPrimitive(leftItems, rightItems);
+        List<String> intersection = intersectionOfTwoLists.intersectionUsingSetPrimitive(leftItems, rightItems);
         assertEquals(expectedIntersection, intersection);
     }
 
